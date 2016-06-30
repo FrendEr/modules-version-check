@@ -1,4 +1,6 @@
-# modules version check
+# Modules Version Check
+
+🔎 Check and automatically update local dependecies before your builds
 
 ## Installation
 
@@ -6,15 +8,7 @@
 npm install modules-version-check
 ```
 
-## Usage
-
-```
-cd your-project/
-
-modules-version-check
-```
-
-## Options
+## Help
 
 ```
 Usage: modules-version-check [options]
@@ -27,12 +21,20 @@ Usage: modules-version-check [options]
     update            update local modules
 ```
 
+## Usage
+
+```
+cd your-project/
+
+modules-version-check
+```
+
 ## Others
 
-#### Gulp
+#### [Gulp](https://github.com/FrendEr/gulp-modules-version-check)
 
 * `npm install gulp-modules-version-check`
 
-#### Grunt
+#### [Grunt](https://github.com/FrendEr/grunt-modules-version-check)
 
 * `npm install grunt-modules-version-check`
