@@ -2,6 +2,8 @@
 
 🔎 Check and automatically update local dependecies before your builds
 
+![image](https://raw.githubusercontent.com/FrendEr/modules-version-check/master/static/r.gif)
+
 ## Installation
 
 ```
