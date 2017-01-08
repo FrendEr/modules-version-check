@@ -45,7 +45,7 @@ cd your-project/
 modules-version-check
 ```
 
-## With task runner
+## Use with task runner
 
 #### [Gulp](https://github.com/FrendEr/gulp-modules-version-check)
 
