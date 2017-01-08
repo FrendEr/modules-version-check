@@ -1,6 +1,9 @@
 # Modules Version Check
 
-🔎 Check and automatically update local dependecies before your builds
+[![Build Status](https://travis-ci.org/FrendEr/modules-version-check.svg?branch=master)](https://travis-ci.org/FrendEr/modules-version-check)
+[![image](https://img.shields.io/npm/v/modules-version-check.svg)](https://www.npmjs.com/package/modules-version-check)
+
+🔎  Check and automatically update local dependecies before your builds
 
 * local modules check
 
