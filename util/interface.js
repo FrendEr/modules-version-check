@@ -1,3 +1,6 @@
+/**
+ * npm registry interface
+ */
 'use strict';
 
 module.exports = {

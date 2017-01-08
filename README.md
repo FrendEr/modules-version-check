@@ -2,25 +2,39 @@
 
 🔎 Check and automatically update local dependecies before your builds
 
-![image](https://raw.githubusercontent.com/FrendEr/modules-version-check/master/static/r.gif)
+* local modules check
+
+![image](https://raw.githubusercontent.com/FrendEr/modules-version-check/master/static/mvc-demo1.gif)
+
+* local modules check via `--match`
+
+![image](https://raw.githubusercontent.com/FrendEr/modules-version-check/master/static/mvc-demo2.gif)
+
+* update local modules
+
+![image](https://raw.githubusercontent.com/FrendEr/modules-version-check/master/static/mvc-demo3.gif)
 
 ## Installation
 
 ```
-npm install modules-version-check
+npm install modules-version-check -g
 ```
 
 ## Help
 
 ```
-Usage: modules-version-check [options]
+Usage: modules-version-check [options] [command]
 
-  Options:
 
-    -h, --help        output usage information
-    -v --version      output the version number
-    --match <regexp>  regular expression matching
-    update            update local modules
+Commands:
+
+  update   update local modules
+
+Options:
+
+  -h, --help        output usage information
+  -v --version      output the version number
+  --match <regexp>  regular expression matching
 ```
 
 ## Usage
@@ -31,7 +45,7 @@ cd your-project/
 modules-version-check
 ```
 
-## Others
+## With task runner
 
 #### [Gulp](https://github.com/FrendEr/gulp-modules-version-check)
 

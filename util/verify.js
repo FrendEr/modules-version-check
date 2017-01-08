@@ -1,9 +1,17 @@
+/**
+ * version verify util
+ */
 'use strict';
-var semver = require('semver');
+const semver = require('semver');
+const chalk = require('chalk');
 
-exports.main = function(latest, max, target, current) {
+exports.main = (latest, max, target, current) => {
   if (!latest || !target || !current) {
     return false;
+  }
+
+  if ('latest' === target) {
+    target = max;
   }
 
   if ((!semver.satisfies(current, target) && max) || (semver.satisfies(current, target) && max && max != current)) {
@@ -13,12 +21,16 @@ exports.main = function(latest, max, target, current) {
   return false;
 };
 
-exports.getVersionInfo = function(result) {
-  var latest = result['dist-tags']['latest'];
-  var versions = result.versions;
-  var versionsList = [];
+exports.getVersionInfo = (name, result) => {
+  if (!result || !result['dist-tags']) {
+    throw new Error('Can\'t get version info about ' + chalk.bold(chalk.white(name)));
+  }
 
-  for (var v in versions) {
+  const latest = result['dist-tags'].latest;
+  const versions = result.versions;
+  const versionsList = [];
+
+  for (const v in versions) {
     versionsList.push(v);
   }
 
@@ -28,12 +40,20 @@ exports.getVersionInfo = function(result) {
   };
 };
 
-exports.getMatchMaxVersion = function(versionsList, targetVersion) {
-  for (var i = 0; i < versionsList.length; i++) {
-    var v = versionsList[i];
+exports.getMatchMaxVersion = (versionsList, targetVersion) => {
+  let maxVersion;
+  versionsList = versionsList || [];
+
+  if (targetVersion === 'latest') {
+    return versionsList[0];
+  }
+
+  for (let i = 0; i < versionsList.length; i++) {
+    const v = versionsList[i];
     if (semver.satisfies(v, targetVersion)) {
-      return v;
+      maxVersion = v;
     }
   }
-  return null;
+
+  return maxVersion;
 };

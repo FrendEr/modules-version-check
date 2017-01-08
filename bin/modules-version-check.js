@@ -1,17 +1,30 @@
 #!/usr/bin/env node
 
 'use strict';
-var mvc = require('../lib/modules-version-check');
-var program = require('commander');
-var pkg = require('../package.json');
+const program = require('commander');
+const mvc = require('../lib/modules-version-check');
+const pkg = require('../package.json');
+let update = false;
 
+// set version
+program.version(pkg.version, '-v --version');
+
+// get match
+program.option('--match <regexp>', 'regular expression matching');
+
+// auto update
 program
-  .version(pkg.version, '-v --version')
-  .option('--match <regexp>', 'regular expression matching')
-  .option('update', 'update local modules')
-  .parse(process.argv);
+  .command('update')
+  .description('update local modules')
+  .action(() => {
+    update = true;
+  });
 
+// get argvs
+program.parse(process.argv);
+
+// run check
 mvc({
   match: program.match,
-  update: program.update || false
+  update: update
 });

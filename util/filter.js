@@ -1,11 +1,14 @@
+/**
+ * return matched modules
+ */
 'use strict';
-var forIn = require('lodash/forIn');
+const forIn = require('lodash/forIn');
 
-module.exports = function(collection, regexp) {
-  var col = {};
-  var regExp = new RegExp(regexp);
+module.exports = (collection, regexp) => {
+  const col = {};
+  const regExp = new RegExp(regexp);
 
-  forIn(collection, function(value, name) {
+  forIn(collection, (value, name) => {
     if (regExp.test(name)) {
       col[name] = value;
     }
