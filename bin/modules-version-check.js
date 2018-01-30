@@ -9,8 +9,11 @@ let update = false;
 // set version
 program.version(pkg.version, '-v --version');
 
-// get match
+// set match
 program.option('--match <regexp>', 'regular expression matching');
+
+// set update cli
+program.option('--cli <client>', 'update client, `npm` or `yarn`, default: `npm`')
 
 // auto update
 program
@@ -26,5 +29,6 @@ program.parse(process.argv);
 // run check
 mvc({
   match: program.match,
+  cli: program.cli,
   update: update
 });

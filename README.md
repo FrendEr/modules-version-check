@@ -38,6 +38,7 @@ Options:
   -h, --help        output usage information
   -v --version      output the version number
   --match <regexp>  regular expression matching
+  --cli <client>    update client, `npm` or `yarn`, default: `npm`
 ```
 
 ## Usage
