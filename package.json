@@ -1,6 +1,6 @@
 {
   "name": "modules-version-check",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "modules version check tool",
   "main": "lib/modules-version-check.js",
   "bin": {
