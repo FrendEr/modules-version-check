@@ -21,7 +21,7 @@ exports.main = (latest, max, target, current) => {
   return false;
 };
 
-exports.getVersionInfo = (name, result) => {
+exports.getVersionInfo = (name, result, isCnpm) => {
   if (!result || !result['dist-tags']) {
     throw new Error('Can\'t get version info about ' + chalk.bold(chalk.white(name)));
   }
@@ -36,7 +36,7 @@ exports.getVersionInfo = (name, result) => {
 
   return {
     version: latest,
-    versionsList: versionsList
+    versionsList: isCnpm ? versions : versionsList
   };
 };
 
