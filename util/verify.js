@@ -36,7 +36,7 @@ exports.getVersionInfo = (name, result, isCnpm) => {
 
   return {
     version: latest,
-    versionsList: isCnpm ? versions : versionsList
+    versionsList: isCnpm ? versionsList.reverse() : versionsList
   };
 };
 
