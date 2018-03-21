@@ -52,7 +52,6 @@ exports.getMatchMaxVersion = (versionsList, targetVersion, latestVersion) => {
     const v = versionsList[i];
     if (semver.satisfies(v, targetVersion)) {
       maxVersion = v;
-      break;
     }
   }
 
