@@ -44,7 +44,7 @@ describe('#verify', function() {
     ];
     var targetVersion1 = '^0.4.2';
     it('should return a version 0.4.8', function() {
-      getMatchMaxVersion(versionsList1, targetVersion1).should.be.ok;
+      getMatchMaxVersion(versionsList1, targetVersion1).should.be.equal('0.4.8');
     });
 
     var versionsList2 = [
@@ -68,7 +68,19 @@ describe('#verify', function() {
     ];
     var targetVersion3 = '^1.0.0';
     it('should return a version 1.0.1', function() {
-      getMatchMaxVersion(versionsList3, targetVersion3).should.be.ok;
+      getMatchMaxVersion(versionsList3, targetVersion3).should.be.equal('1.0.1');
+    });
+
+    var versionsList4 = [
+      '1.9.0',
+      '1.8.4',
+      '1.8.3',
+      '1.8.2',
+      '1.8.1'
+    ];
+    var targetVersion4 = '^1.8.4';
+    it('should return a version 1.8.4', function() {
+      getMatchMaxVersion(versionsList4, targetVersion4, '1.8.4').should.be.equal('1.8.4');
     });
   });
 });
